@@ -1,0 +1,49 @@
+---
+title: "MechaCarChallenge"
+author: "Ling"
+date: "2/2/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Challenge Deliverable 1
+
+load package
+```{r}
+library(dplyr)
+```
+import and read csv
+```{r}
+MechaCar <- read.csv(file="data/MechaCar_mpg.csv")
+```
+perform linear regression with all 6 variables and pass the data frame created
+```{r}
+lm(vehicle_length ~ vehicle_weight + spoiler_angle + ground_clearance + AWD + mpg, MechaCar)
+```
+find the p value using summary function
+```{r}
+summary(lm(formula = vehicle_length ~ vehicle_weight + spoiler_angle + 
+    ground_clearance + AWD + mpg, data = MechaCar))
+```
+
+# Challenge Deliverable 2
+
+import and read suspension coil csv
+```{r}
+SuspCoil <- read.csv(file="data/Suspension_Coil.csv")
+```
+
+create a total summary dataframe
+```{r}
+```
+
+create a lot summary dataframe
+```{r}
+```
+
+# Challenge Deliverable 3
+
+t-test 
