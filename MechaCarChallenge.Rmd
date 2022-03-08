@@ -54,3 +54,12 @@ lot_summary <- SuspCoil  %>% group_by(Manufacturing_Lot) %>% summarize(Mean = me
 # Challenge Deliverable 3
 
 t-test 
+```{r}
+t.test(SuspCoil$PSI, mu=1500)
+```
+```{r}
+t.test(subset(SuspCoil,Manufacturing_Lot =="Lot1")$PSI,mu = 1500)
+t.test(subset(SuspCoil,Manufacturing_Lot =="Lot2")$PSI,mu = 1500)
+t.test(subset(SuspCoil,Manufacturing_Lot =="Lot3")$PSI,mu = 1500)
+```
+
