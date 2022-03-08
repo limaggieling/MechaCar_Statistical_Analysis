@@ -14,6 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 load package
 ```{r}
 library(dplyr)
+library(tidyverse)
 ```
 import and read csv
 ```{r}
@@ -38,10 +39,16 @@ SuspCoil <- read.csv(file="data/Suspension_Coil.csv")
 
 create a total summary dataframe
 ```{r}
+total_summary <- SuspCoil %>% summarize(Mean = mean(PSI),
+                                         Median = median(PSI),
+                                         Variance = var(PSI),
+                                         SD = sd(PSI),
+                                         n=n(), .groups = 'keep')
 ```
 
 create a lot summary dataframe
 ```{r}
+lot_summary <- SuspCoil  %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(SuspCoil$PSI), Median = median(SuspCoil$PSI), Variance = var(SuspCoil$PSI), SD = sd(SuspCoil$PSI), n=n(), .groups = 'keep') 
 ```
 
 # Challenge Deliverable 3
